@@ -1,0 +1,96 @@
+/* font i want to use - Notable */
+body { 
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: #f0f0f0;
+}
+
+@font-face {
+    font-family: 'Showtime';
+    src: url('./styles/Showtime-R9Ke.ttf') format('truetype'); /* Corrected path */
+    font-weight: normal;
+    font-style: normal;
+}
+
+header {
+    background-color: #b0b0b0;
+    color: white;
+    width: 100%;
+    padding: 20px;
+    text-align: center;
+}
+
+header h1 {
+    color: white;
+    text-shadow: 
+        -1px -1px 0 #000,  
+        1px -1px 0 #000,
+        -1px 1px 0 #000,
+        1px 1px 0 #000;
+}
+
+h1 {
+    font-family: 'Showtime', sans-serif;
+    font-size: 4rem; /* Responsive scaling */
+    color: red;
+    text-align: center; /* Center align if needed */
+}
+
+nav {
+    font-family: 'Notable', sans-serif;
+    background-color: #7c7c7c;
+    width: 100%;
+    overflow: hidden;
+}
+
+nav a {
+    float: left;
+    display: block;
+    color: rgb(0, 0, 0);
+    text-align: center;
+    padding: 14px 20px;
+    text-decoration: none;
+}
+
+nav a:hover {
+    background-color: #575757;
+}
+
+main {
+    margin: 20px;
+    padding: 20px;
+    background-color: white;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    max-width: 800px;
+}
+
+.last-edited {
+    font-style: italic;
+    color: #666; /* Grey color */
+}
+
+.container {
+    display: flex;
+    justify-content: space-between;
+    margin: 20px;
+    padding: 20px;
+    background-color: white;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    max-width: 1200px;
+    width: calc(100% - 40px); /* Adjust width to take full available space */
+}
+
+.box {
+    flex: 1;
+    margin: 20px;
+    padding: 20px;
+    background-color: #e0e0e0;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
