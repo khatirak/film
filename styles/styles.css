@@ -1,186 +1,165 @@
-/* Font Import & Font Face */
-@import url('https://fonts.googleapis.com/css2?family=Notable&display=swap');
-
-
-/* Global Styles */
-body { 
-  font-family: DM-Sans;
-  margin: 0;
-  padding: 0;
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start; /* Align everything to the left */
-  background-color: #f0f0f0;
-  padding-left: 50px; /* Create left spacing */
-}
-
-/* Header & Title */
-header {
-  background-color: #b0b0b0;
-  color: white;
-  width: 100%;
-  padding: 20px;
-  text-align: center;
-}
-
-h1 {
-  font-family: 'Showtime', sans-serif;
-  font-size: 4rem;
-  color: red;
-  text-align: left;
-  margin-left: 20px;
-}
-
-.title-image {
-  width: 75%;
-  height: auto;
-  display: block;
-  padding: 20px 0;
-}
-
-/* Main Content & Container */
-main {
-  margin: 20px;
-  padding: 20px;
-  background-color: white;
-  border-radius: 8px;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-  max-width: 800px;
-}
-
-.container {
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-  justify-content: flex-start;
-  margin: 20px;
-  padding: 20px;
-  background-color: white;
-  border-radius: 8px;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-  max-width: 1200px;
-  width: calc(100% - 40px);
-}
-
-/* Text Content */
-.text-content {
-  text-align: left;
-  margin-top: 20px;
-}
-
-.text-content h2 {
-  font-size: 1.5rem;
-  font-weight: bold;
-}
-
-.text-content p {
-  font-size: 1rem;
-  line-height: 1.6;
-}
-
-/* Filmed By */
-.filmed-by {
-  margin-top: 20px;
-  font-size: 1.2rem;
-  font-style: italic;
-}
-
-/* Toggle Button */
-.toggle-button {
-  background-color: #5e5e5e;
-  color: white;
-  border: none;
-  padding: 10px 20px;
-  cursor: pointer;
-  font-size: 1.2rem;
-  border-radius: 5px;
-  transition: 0.3s;
-}
-
-.toggle-button:hover {
-  background-color: #1f1f1f;
-}
-
-/* Dropdown Content (Initially Hidden) */
-.dropdown-content {
-  width: 80%;
-  background-color: white;
-  color: black;
-  margin-top: 10px;
-  margin-right: 40px;
-  padding: 15px;
-  border-radius: 8px;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-  overflow: hidden;
-  max-height: 0;
-  transition: max-height 0.5s ease-out;
-}
-
-/* Film Section Layout */
-.film-section {
-  display: flex;
-  align-items: flex-start;
-  width: 100vw;           /* Full viewport width */
-  /* padding: 0 50px;        Left/right padding */
-  box-sizing: border-box;
-  margin: 20px 0;
-}
-
-/* Film Container (holds the film roll and video overlay) */
-.film-container {
-  flex: 0 0 800px;  /* Fixed width for film roll area */
-  position: relative;
-}
-
-/* Film Roll Image */
-.film-roll {
-  width: 100%;
-  height: auto;
-  max-width: 800px;
-}
-
-/* Toggle Container (holds the button and description) */
-.toggle-container {
-  flex: 1;
-  margin-left: 20px;
-}
-
-/* Video Overlay & Placeholder */
-.video-overlay {
-  position: absolute;
-  width: 100%;
-  max-width: 750px;
-  height: auto;
-  top: 50%;
-  left: 2.5%;
-  transform: translateY(-50%);
-}
-
-.video-overlay iframe {
-  width: 100%;
-  height: auto;
-  aspect-ratio: 16 / 9;
-}
-
-.video-placeholder {
-  width: 100%;
-  height: 0;
-  padding-bottom: 56.25%;  /* 16:9 aspect ratio */
-  background: url('https://img.youtube.com/vi/0Exxu8lsGYE/hqdefault.jpg') center center / cover no-repeat;
-  position: relative;
-  cursor: pointer;
-}
-
-/* Play Button Overlay */
-.play-button {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  font-size: 3rem;
-  color: white;
-  background-color: rgba(0, 0, 0, 0.5);
-  border-radius: 50%;
-  padding: 20px;
-  cursor: pointer;
-}
+/* Enable smooth scrolling */
+html {
+    scroll-behavior: smooth;
+  }
+  
+  /* Base Styles */
+  body {
+    margin: 0;
+    font-family: 'DM Sans', sans-serif;
+    font-size: 60px; /* Increased body font size */
+    color: #6e6e6e;
+    /* Full-page gradient background */
+    background: linear-gradient(to bottom, #F0F0F0 0%, #D8D8D8 50%, #000000 100%);
+  }
+  h1, h2, h3 {
+    font-family: 'DM Sans', sans-serif;
+    font-weight: 700;
+    font-size: 80px;
+    margin: 0 0 20px;
+    color: rgb(0, 0, 0);
+  }
+  p {
+    line-height: 1.6;
+  }
+  
+  /* Staggered words animation for paragraphs */
+  .staggered span {
+    opacity: 0;
+    display: inline-block;
+    animation: fadeInWord 1s forwards;
+  }
+  @keyframes fadeInWord {
+    from { opacity: 0; transform: translateY(20px); }
+    to   { opacity: 1; transform: translateY(0); }
+  }
+  
+  /* Navigation Bar */
+  .navbar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background-color: #A8A8A8; /* or change to #D8D8D8 if desired */
+    border-bottom: 1px solid #D8D8D8;
+    padding: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 1000;
+    transition: background-color 0.5s ease;
+    font-size: 16px; /* Fixed nav bar font size */
+  }
+  .navbar .brand {
+    font-size: 1.9em;
+    font-weight: 800;
+    color: #783030;
+  }
+  .navbar .nav-links a {
+    margin: 0 60px;
+    text-decoration: none;
+    font-size: 1.2em;
+    color: #000000;
+    padding: 8px 24px;
+    border-radius: 4px;
+    transition: all 0.3s ease;
+  }
+  .navbar .nav-links a:hover,
+  .navbar .nav-links a:focus {
+    background-color: #783030;
+    color: #F0F0F0;
+    transform: scale(1.05);
+  }
+  .navbar .nav-links a:active {
+    background-color: #A8A8A8;
+    color: #000000;
+  }
+  .nav-links {
+    display: flex;
+    gap: 50px; /* Adjust space between links */
+  }
+  
+  /* Section Spacing */
+  section {
+    padding: 100px 20px 60px; /* Extra top padding for fixed nav */
+    margin-top: 60px;
+  }
+  
+  /* Film & Photo Carousel Layout */
+  .film-section {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 20px 0;
+    padding: 20px;
+    /* Transparent background so the gradient shows through */
+    background-color: transparent;
+  }
+  /* Fixed width for carousel positioning */
+  .film-container {
+    width: 800px;
+    position: relative;
+  }
+  .film-roll {
+    width: 100%;
+    height: auto;
+    display: block;
+  }
+  
+  /* Carousel Buttons for Photos */
+  .carousel-btn {
+    position: absolute;
+    top: 50%;
+    border: none;
+    color: #783030;
+    background-color: transparent;
+    font-size: 3rem; /* Larger arrow icon */
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    cursor: pointer;
+    transform: translateY(-50%);
+    z-index: 10;
+  }
+  .carousel-btn.left {
+    left: calc(50% - 475px);
+  }
+  .carousel-btn.right {
+    right: calc(50% - 475px);
+  }
+  
+  /* Video Overlay & Placeholder (Film Section Only) */
+  .video-overlay {
+    position: absolute;
+    width: 100%;
+    max-width: 750px;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+  .video-overlay iframe {
+    width: 100%;
+    height: auto;
+    aspect-ratio: 16 / 9;
+  }
+  .video-placeholder {
+    width: 100%;
+    height: 0;
+    padding-bottom: 56.25%; /* 16:9 ratio */
+    background: url('https://img.youtube.com/vi/Wr0sThI1xys/hqdefault.jpg') center center / cover no-repeat;
+    position: relative;
+    cursor: pointer;
+  }
+  .play-button {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 3rem;
+    color: white;
+    background-color: rgba(0, 0, 0, 0.5);
+    border-radius: 50%;
+    padding: 20px;
+    cursor: pointer;
+  }

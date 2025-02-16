@@ -6,173 +6,8 @@
   <title>My Short Film</title>
   <!-- Import DM Sans (400 & 700) -->
   <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;700&display=swap" rel="stylesheet" />
-  <style>
-    /* Enable smooth scrolling */
-    html {
-      scroll-behavior: smooth;
-    }
-
-    /* Base Styles */
-    body {
-      margin: 0;
-      font-family: 'DM Sans', sans-serif;
-      font-size: 60px; /* Increased body font size */
-      color: #6e6e6e;
-      /* Full-page gradient background that scrolls with the content */
-      /* background: linear-gradient(to bottom, #F0F0F0 0%, #D8D8D8 50%, #000000 100%); */
-    }
-    h1, h2, h3 {
-      font-family: 'DM Sans', sans-serif;
-      font-weight: 700;
-      font-size: 80px;
-      margin: 0 0 20px;
-      color:rgb(0, 0, 0)
-    }
-    p {
-      line-height: 1.6;
-    }
-    
-    /* Staggered words animation */
-    .staggered span {
-      opacity: 0;
-      display: inline-block;
-      animation: fadeInWord 1s forwards;
-    }
-    @keyframes fadeInWord {
-      from { opacity: 0; transform: translateY(20px); }
-      to   { opacity: 1; transform: translateY(0); }
-    }
-    
-    /* Navigation Bar */
-    .navbar {
-      position: fixed;
-      top: 0;
-      left: 0;
-      width: 100%;
-      background-color: #A8A8A8; /* or change to #D8D8D8 if desired */
-      border-bottom: 1px solid #D8D8D8;
-      padding: 20px;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      z-index: 1000;
-      transition: background-color 0.5s ease;
-      font-size: 16px; /* Fixed nav bar font size */
-    }
-    .navbar .brand {
-      font-size: 1.9em;
-      font-weight: 800;
-      color: #783030;
-    }
-    .navbar .nav-links a {
-      margin: 0 60px;
-      text-decoration: none;
-      font-size: 1.2em;
-      color: #000000;
-      padding: 8px 24px;
-      border-radius: 4px;
-      transition: all 0.3s ease;
-    }
-    .navbar .nav-links a:hover,
-    .navbar .nav-links a:focus {
-      background-color: #783030;
-      color: #F0F0F0;
-      transform: scale(1.05);
-    }
-    .navbar .nav-links a:active {
-      background-color: #A8A8A8;
-      color: #000000;
-    }
-    .nav-links {
-      display: flex;
-      gap: 50px; /* Adjust space between links */
-    }
-    
-    /* Section Spacing */
-    section {
-      padding: 100px 20px 60px; /* Extra top padding for fixed nav */
-      margin-top: 60px;
-    }
-    
-    /* Film & Key Moments Layout */
-    .film-section {
-      position: relative;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      margin: 20px 0;
-      padding: 20px;
-      /* Transparent background to reveal the underlying gradient */
-      background-color: transparent;
-    }
-    /* Fix width for carousel positioning */
-    .film-container {
-      width: 800px;
-      position: relative;
-    }
-    .film-roll {
-      width: 100%;
-      height: auto;
-      display: block;
-    }
-    
-    /* Carousel Buttons for Key Moments */
-    .carousel-btn {
-      position: absolute;
-      top: 50%;
-      border: none;
-      color: #783030;
-      background-color: transparent;
-      font-size: 3rem; /* Larger arrow icon */
-      width: 60px;
-      height: 60px;
-      border-radius: 50%;
-      cursor: pointer;
-      transform: translateY(-50%);
-      z-index: 10;
-    }
-    .carousel-btn.left {
-      left: calc(50% - 475px);
-    }
-    .carousel-btn.right {
-      right: calc(50% - 475px);
-    }
-    
-    /* Video Overlay & Placeholder (Film Section Only) */
-    .video-overlay {
-      position: absolute;
-      width: 100%;
-      max-width: 750px;
-      top: 50%;
-      left: 50%;
-      transform: translate(-50%, -50%);
-    }
-    .video-overlay iframe {
-      width: 100%;
-      height: auto;
-      aspect-ratio: 16 / 9;
-    }
-    .video-placeholder {
-      width: 100%;
-      height: 0;
-      padding-bottom: 56.25%; /* 16:9 ratio */
-      background: url('https://img.youtube.com/vi/0Exxu8lsGYE/hqdefault.jpg') center center / cover no-repeat;
-      position: relative;
-      cursor: pointer;
-    }
-    .play-button {
-      position: absolute;
-      top: 50%;
-      left: 50%;
-      transform: translate(-50%, -50%);
-      font-size: 3rem;
-      color: white;
-      background-color: rgba(0, 0, 0, 0.5);
-      border-radius: 50%;
-      padding: 20px;
-      cursor: pointer;
-    }
-  </style>
+  <!-- Link to external CSS -->
+  <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
   <!-- Navigation Bar -->
@@ -185,7 +20,7 @@
     </div>
   </nav>
 
-  <!-- About Section (appears white as it's at the top of the gradient) -->
+  <!-- About Section -->
   <section id="about">
     <h2>ABOUT</h2>
     <p class="staggered">
@@ -195,28 +30,29 @@
     </p>
   </section>
 
-  <!-- Key Moments Section (middle of gradient: light grey) -->
+  <!-- Photos Section (Photo Carousel) -->
   <section id="photos">
     <h2>PHOTOS</h2>
     <div class="film-section">
       <div class="film-container">
-        <img src="styles/film_roll.png" class="film-roll" alt="Film Roll">
+        <!-- Default carousel image -->
+        <img id="carousel-image" src="https://raw.githubusercontent.com/khatirak/comms_lab/main/images/img_1.jpg" class="film-roll" alt="Photo Carousel">
       </div>
-      <!-- Carousel arrow buttons positioned outside the film roll -->
+      <!-- Carousel arrow buttons -->
       <button class="carousel-btn left">&#9664;</button>
       <button class="carousel-btn right">&#9654;</button>
     </div>
   </section>
 
-  <!-- Film Section (lower part of gradient: dark grey) -->
+  <!-- Film Section (Video) -->
   <section id="film">
     <h2>THE FILM</h2>
     <div class="film-section">
       <div class="film-container">
-        <img src="styles/film_roll.png" class="film-roll" alt="Film Roll">
+        <img src="https://raw.githubusercontent.com/khatirak/comms_lab/main/images/film_roll.png" class="film-roll" alt="Film Roll">
         <div class="video-overlay">
-          <!-- Video placeholder (click to load video) -->
-          <div class="video-placeholder" data-video-id="0Exxu8lsGYE" onclick="loadVideo(this)">
+          <!-- Video placeholder with video ID "Wr0sThI1xys" -->
+          <div class="video-placeholder" data-video-id="Wr0sThI1xys" onclick="loadVideo(this)">
             <div class="play-button">&#9658;</div>
           </div>
         </div>
@@ -224,29 +60,7 @@
     </div>
   </section>
 
-  <!-- Scripts -->
-  <script>
-    // Function to split text of any element with class "staggered" into spans
-    document.addEventListener("DOMContentLoaded", function() {
-      document.querySelectorAll('.staggered').forEach(function(el) {
-        const words = el.innerText.split(" ");
-        el.innerHTML = words
-          .map((word, index) => `<span style="animation-delay: ${index * 0.3}s">${word} </span>`)
-          .join(" ");
-      });
-    });
-
-    // Replace the video placeholder with a YouTube iframe when clicked.
-    function loadVideo(placeholder) {
-      const videoId = placeholder.getAttribute("data-video-id");
-      const iframe = document.createElement("iframe");
-      iframe.setAttribute("width", "560");
-      iframe.setAttribute("height", "315");
-      iframe.setAttribute("src", "https://www.youtube.com/embed/" + videoId + "?autoplay=1&rel=0");
-      iframe.setAttribute("frameborder", "0");
-      iframe.setAttribute("allow", "accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture");
-      placeholder.parentNode.replaceChild(iframe, placeholder);
-    }
-  </script>
+  <!-- Link to external JavaScript -->
+  <script src="script.js"></script>
 </body>
 </html>
