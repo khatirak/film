@@ -10,9 +10,9 @@ document.addEventListener("DOMContentLoaded", function() {
   
   // Photo carousel logic
   const images = [
-    "https://raw.githubusercontent.com/khatirak/comms_lab/main/images/img_1.jpg",
-    "https://raw.githubusercontent.com/khatirak/comms_lab/main/images/img_2.jpg",
-    "https://raw.githubusercontent.com/khatirak/comms_lab/main/images/img_3.jpg"
+    "https://raw.githubusercontent.com/khatirak/film/main/images/img_1.jpg",
+    "https://raw.githubusercontent.com/khatirak/film/main/images/img_2.jpg",
+    "https://raw.githubusercontent.com/khatirak/film/main/images/img_3.jpg"
   ];
   let currentImage = 0;
   const carouselImage = document.getElementById("carousel-image");
